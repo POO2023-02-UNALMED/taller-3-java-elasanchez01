@@ -7,12 +7,27 @@ public class TV {
 	private boolean estado ;
 	private int volumen ; 
 	private Control control ;
+	private static int numTV ;
 	
 	public TV (Marca marca, boolean estado) {
 		canal = 1;
 		volumen = 1;
 		precio = 500;
+		numTV++;
 	}
+	
+	public void turnOn () {
+		estado = true;
+	}
+	
+	public void turnOff () {
+		estado = false;
+	}
+	
+	public boolean getEstado() {
+		return estado ;	
+	}
+	
 	
 	public Marca getMarca() {
 		return marca ;	
@@ -32,6 +47,10 @@ public class TV {
 	
 	public Control getControl() {
 		return control ;	
+	}
+	
+	public static int getNumTV() {
+		return numTV ;
 	}
 	
 	public void setMarca (Marca a_marca) {
