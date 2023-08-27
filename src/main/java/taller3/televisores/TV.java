@@ -16,6 +16,58 @@ public class TV {
 		numTV++;
 	}
 	
+	public void volumenUp() {
+		if (estado) {
+			if (volumen >= 1 && volumen < 7) {
+				volumen++;
+			} else {
+				return;
+			}
+		} else {
+			return;
+		}
+		
+	} 
+	
+	public void volumenDown() {
+		if (estado) {
+			if (volumen >= 0 && volumen < 7) {
+				volumen--;
+			} else {
+				return;
+			}
+		} else {
+			return;
+		}
+		
+	} 
+	
+	public void canalUp() {
+		if (estado) {
+			if (canal >= 0 && canal < 7) {
+				canal++;
+			} else {
+				return;
+			}
+		} else {
+			return;
+		}
+		
+	} 
+	
+	public void canalDown() {
+		if (estado) {
+			if (canal >= 1 && canal < 120) {
+				canal--;
+			} else {
+				return;
+			}
+		} else {
+			return;
+		}
+		
+	} 
+	
 	public void turnOn () {
 		estado = true;
 	}
