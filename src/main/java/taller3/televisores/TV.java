@@ -7,12 +7,14 @@ public class TV {
 	private boolean estado ;
 	private int volumen ; 
 	private Control control ;
-	private static int numTV ;
+	private static int numTV=0 ;
 	
 	public TV (Marca marca, boolean estado) {
-		canal = 1;
-		volumen = 1;
-		precio = 500;
+		this.canal = 1;
+		this.volumen = 1;
+		this.precio = 500;
+		this.marca = marca;
+		this.estado = estado;	
 		numTV++;
 	}
 	
@@ -81,15 +83,21 @@ public class TV {
 		marca = a_marca ;
 	}
 	
-	public void setCanal (int a_canal) {
-		canal = a_canal ;
+	public void setCanal (int num) {
+		if (this.estado == true && num >=1 && num <=120) {
+			canal = num;
+		}
+
 	}
-	public void setPrecio (int a_precio) {
-		precio = a_precio ;
+	public void setPrecio (int value) {
+		precio = value ;
 	}
 	
-	public void setVolumnes (int a_volumen) {
-		volumen = a_volumen ;
+	public void setVolumen (int num) {
+		if (this.estado == true && num >= 0 && num <= 7 ) {
+			volumen = num ;	
+		}
+		
 	}
 	
 	public void setControl (Control a_control) {
