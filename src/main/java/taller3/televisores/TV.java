@@ -15,91 +15,90 @@ public class TV {
 		numTV++;
 	}
 	
-	public void volumenDown() {
-		if (estado == true && volumen > 0 && volumen <= 7) {
-				volumen--;
-			} 	
-		}
-
-	public void volumenUp() {
-		if (estado == true && volumen >= 0 && volumen < 7) {
-				volumen--;
-			} 	
-		}
-	
-	public void canalDown() {
-		if (estado == true && canal > 1 && canal <= 120) {
-				canal--;
-			} 	
-		}
-	
-	public void canalUp() {
-		if (estado == true && canal >= 1 && canal < 120) {
-				canal++;
-			} 	
-		}
-	
-	public void turnOn () {
-		estado = true;
-	}
-	
-	public void turnOff () {
-		estado = false;
-	}
-	
-	public boolean getEstado() {
-		return estado ;	
-	}
-	
-	
 	public Marca getMarca() {
 		return marca ;	
 	}
 	
+	public void setMarca (Marca marca) {
+		this.marca = marca ;
+	}
+	
 	public int getCanal() {
-		return canal ;	
-	}
-	
-	public int getPrecio() {
-		return precio ;	
-	}
-	
-	public int getVolumen() {
-		return volumen ;	
-	}
-	
-	public Control getControl() {
-		return control ;	
-	}
-	
-	public static int getNumTV() {
-		return numTV ;
-	}
-	
-	public void setMarca (Marca a_marca) {
-		marca = a_marca ;
-	}
-	
-	public void setCanal (int num) {
-		if (this.estado == true && num >=1 && num <=120) {
-			canal = num;
-		}
+        return canal;
+    }
 
-	}
-	public void setPrecio (int value) {
-		precio = value ;
-	}
-	
-	public void setVolumen (int num) {
-		if (this.estado == true && num >= 0 && num <= 7 ) {
-			volumen = num ;	
-		}
-		
-	}
-	
-	public void setControl (Control a_control) {
-		control = a_control ;
-	}
-	
+    public void setCanal(int canal) {
+        if (estado && canal >= 1 && canal <= 120) {
+            this.canal = canal;
+        }
+    }
+    
+    public int getPrecio() {
+        return precio;
+    }
 
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public int getVolumen() {
+        return volumen;
+    }
+
+    public void setVolumen(int volumen) {
+        if (estado && volumen >= 0 && volumen <= 7) {
+            this.volumen = volumen;
+        }
+    }
+
+    public static int getNumTV() {
+        return numTV;
+    }
+
+    public void turnOn() {
+        estado = true;
+    }
+
+    public void turnOff() {
+        estado = false;
+    }
+
+    public void canalUp() {
+        if (estado && canal < 120) {
+            canal++;
+        }
+    }
+
+    public void canalDown() {
+        if (estado && canal > 1) {
+            canal--;
+        }
+    }
+
+    public void volumenUp() {
+        if (estado && volumen < 7) {
+            volumen++;
+        }
+    }
+
+    public void volumenDown() {
+        if (estado && volumen > 0) {
+            volumen--;
+        }
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+    }
+
+    public Control getControl() {
+        return control;
+    }
 }
+
+    
+	
