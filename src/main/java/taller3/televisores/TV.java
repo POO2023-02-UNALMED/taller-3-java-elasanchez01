@@ -14,7 +14,10 @@ public class TV {
 		this.estado = estado;	
 		numTV++;
 	}
-	
+	public static void setNumTV(int num) {
+		numTV = num ;
+	}	
+		
 	public Marca getMarca() {
 		return marca ;	
 	}
